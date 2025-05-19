@@ -1,5 +1,7 @@
 package 线程.奇偶;
 
+
+//太冗余了 不要这个了 这个可以看一下就行了
 public class Demo0513 {
 
     private static final int MAX = 10;

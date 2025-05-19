@@ -1,9 +1,8 @@
 package 线程;
 
-public class Dmeo {
+public class Main {
 
     public static void main(String[] args) {
-        System.out.println("123");
+        System.out.println("hello");
     }
-
 }
