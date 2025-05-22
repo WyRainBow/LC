@@ -72,14 +72,27 @@ public class Demo {
     public static void main(String[] args) {
         LRUCache lRUCache = new LRUCache(2);
 
+        System.out.println("put(1, 1)");
         lRUCache.put(1, 1); // 缓存是 {1=1}
-        lRUCache.put(2, 2); // 缓存是 {1=1、2=2}
-        System.out.println(lRUCache.get(1));    // 返回 1
-        lRUCache.put(3, 3); // 该操作会使得 2 作废、缓存是 {1=1, 3=3}
-        System.out.println(lRUCache.get(2));    // 返回 -1 (未找到)
-        lRUCache.put(4, 4); // 该操作会使得 1 作废、缓存是 {4=4、 3=3}
-        System.out.println(lRUCache.get(1));    // 返回 -1 (未找到)
-        System.out.println(lRUCache.get(3));    // 返回 3
-        System.out.println(lRUCache.get(4));    // 返回 4
+
+        System.out.println("put(2, 2)");
+        lRUCache.put(2, 2); // 缓存是 {1=1, 2=2}
+
+        System.out.println("get(1) => " + lRUCache.get(1)); // 返回 1，缓存更新为 {2=2, 1=1}
+
+        System.out.println("put(3, 3) // 缓存容量已满，淘汰最近最少使用的 key=2");
+        lRUCache.put(3, 3); // 淘汰 key=2，缓存为 {1=1, 3=3}
+
+        System.out.println("get(2) => " + lRUCache.get(2)); // 返回 -1，2 被淘汰
+
+        System.out.println("put(4, 4) // 淘汰最近最少使用的 key=1");
+        lRUCache.put(4, 4); // 淘汰 key=1，缓存为 {3=3, 4=4}
+
+        System.out.println("get(1) => " + lRUCache.get(1)); // 返回 -1，1 被淘汰
+        System.out.println("get(3) => " + lRUCache.get(3)); // 返回 3
+        System.out.println("get(4) => " + lRUCache.get(4)); // 返回 4
     }
+
+
+
 }
