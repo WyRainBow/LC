@@ -57,7 +57,7 @@ public class Demo0510 {
         }
 
 
-        //这里也要注意一下
+        //这里也要注意一下 是left 跟 j
         swap(nums,left,j);
 
         return j;
