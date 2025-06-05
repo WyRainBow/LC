@@ -53,6 +53,7 @@ public class PathSumCounter {
     public static void findPaths(TreeNode node, int targetSum, List<Integer> currentPath, List<List<Integer>> resultPaths) {
         if (node == null) return;
 
+
         currentPath.add(node.val);
 
         // 如果是叶子节点且路径和刚好等于 targetSum
