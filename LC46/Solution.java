@@ -28,7 +28,7 @@ public class Solution {
             return;
         }
 
-        // 在非叶子结点处，产生不同的分支
+        // 在非叶子结点处产生不同的分支
         for (int i = 0; i < len; i++) {
             if (!used[i]) {
                 path.add(nums[i]);
