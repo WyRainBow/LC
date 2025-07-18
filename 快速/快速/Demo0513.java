@@ -1,6 +1,4 @@
-package 快速;
-
-import java.util.List;
+package LC.快速.快速;
 
 public class Demo0513 {
 

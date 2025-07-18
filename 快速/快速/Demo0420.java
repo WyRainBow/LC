@@ -1,39 +1,45 @@
-package 快速;
+package LC.快速.快速;
 
-public class Demo0505 {
 
+/**
+ * 2025-04-20 23:48
+ */
+public class Demo0420 {
 
     public static void main(String[] args) {
-
-        int[] nums=new int[]{8,1,2,8,5};
-
-        quickSort(nums,0,nums.length-1);
-
+        int[] nums={2,4,5,2,1};
+        quickSort(nums);
         for (int num : nums) {
-            System.out.print(num);
-            System.out.print(" ");
-        }
-    }
-
-
-    public static void quickSort(int[] nums,int left,int right){
-
-        if(left<right){
-            int priortIndex=partition(nums,left,right);
-
-            quickSort(nums,left,priortIndex-1);
-            quickSort(nums,priortIndex+1,right);
+            System.out.print(num + " ");
         }
     }
 
 
 
-    public static int partition(int[] nums,int left,int right){
+
+    public static void quickSort(int[] nums) {
+        quickSortHelper(nums,0,nums.length-1);
+    }
 
 
+
+    public static void quickSortHelper(int[] nums, int left, int right) {
+        if(left <= right){
+            int pivotIndex=partition(nums,left,right);
+
+            quickSortHelper(nums,left,pivotIndex-1);
+
+            quickSortHelper(nums,pivotIndex+1,right);
+        }
+    }
+
+
+
+    public static int partition(int[] nums, int left, int right) {
         int pivot=nums[left];
         int i=left+1;
         int j=right;
+
 
         while(i<=j){
 
@@ -41,9 +47,11 @@ public class Demo0505 {
                 i++;
             }
 
+
             while(j>=left && nums[j]>pivot){
                 j--;
             }
+
 
             if(i<j){
                 swap(nums,i,j);
@@ -60,6 +68,4 @@ public class Demo0505 {
         nums[i]=nums[j];
         nums[j]=temp;
     }
-
-
 }

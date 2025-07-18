@@ -1,4 +1,4 @@
-package 快速;
+package LC.快速.快速;
 
 public class Demo0510 {
 
