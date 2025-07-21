@@ -1,4 +1,4 @@
-package LC.快速.快速;
+package 快速.快速;
 
 
 /**
@@ -7,20 +7,16 @@ package LC.快速.快速;
 public class Demo0420 {
 
     public static void main(String[] args) {
-        int[] nums={2,4,5,2,1};
+        int[] nums = {2, 4, 5, 2, 1};
         quickSort(nums);
         for (int num : nums) {
             System.out.print(num + " ");
         }
     }
 
-
-
-
     public static void quickSort(int[] nums) {
         quickSortHelper(nums,0,nums.length-1);
     }
-
 
 
     public static void quickSortHelper(int[] nums, int left, int right) {
@@ -32,8 +28,6 @@ public class Demo0420 {
             quickSortHelper(nums,pivotIndex+1,right);
         }
     }
-
-
 
     public static int partition(int[] nums, int left, int right) {
         int pivot=nums[left];
@@ -61,7 +55,6 @@ public class Demo0420 {
         swap(nums,left,j);
         return j;
     }
-
 
     public static void swap(int[] nums,int i,int j){
         int temp=nums[i];
