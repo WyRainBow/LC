@@ -1,4 +1,4 @@
-package 二叉树.构造二叉树.方法一最简单;
+package LCsss.二叉树.构造二叉树;
 
 import java.util.*;
 
@@ -27,6 +27,8 @@ public class Main {
     }
 
     public static void printLevelOrder(TreeNode root) {
+
+        //null就打印星号
         if (root == null) {
             System.out.println("*");
             return;
