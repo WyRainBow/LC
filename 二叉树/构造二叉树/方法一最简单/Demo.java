@@ -1,4 +1,4 @@
-package 二叉树.构造二叉树.构造二叉树.方法一最简单;
+package 二叉树.构造二叉树.方法一最简单;
 import java.util.*;
 
 

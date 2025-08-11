@@ -1,4 +1,4 @@
-package 二叉树.构造二叉树.构造二叉树.方法二;
+package 二叉树.构造二叉树.方法二;
 
 import java.util.LinkedList;
 import java.util.Queue;

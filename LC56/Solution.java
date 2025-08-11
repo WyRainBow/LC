@@ -2,6 +2,8 @@ package LC56;
 
 import java.util.*;
 
+
+//LC56 合并区间
 class Solution {
     public int[][] merge(int[][] intervals) {
 
@@ -30,6 +32,17 @@ class Solution {
         int[][] nums = new int[][]{
                 {1, 3}, {2, 6}, {8, 10}, {15, 18}
         };
+
+
+        int[][] num={
+                {1,3},
+                {2,6},
+                {8,10}
+        };
+
+
+        int[] arr=new int[]{1,2,3};
+
 
         Solution s = new Solution();
         int[][] merged = s.merge(nums);

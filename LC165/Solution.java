@@ -2,54 +2,41 @@ package LC165;
 
 class Solution {
     public int compareVersion(String version1, String version2) {
-
-        String[] parts1 = version1.split("\\.");
-        String[] parts2 = version2.split("\\.");
-
-
-        int len1 = parts1.length;
-        int len2 = parts2.length;
-
-        int len = Math.max(len1, len2);
+        String[] v1 = version1.split("\\.");
+        String[] v2 = version2.split("\\.");
 
 
-        for (int i = 0; i < len; i++) {
-            int num1 = 0;
-            int num2 = 0;
-
-
-            if (i < len1) {
-                num1 = Integer.parseInt(parts1[i]);
-            }
-
-
-            if (i < len2) {
-                num2 = Integer.parseInt(parts2[i]);
-            }
-
-
-            if (num1 != num2) {
-                if(num1 > num2){
-                    return 1;
-                }else{
-                    return -1;
-                }
-
-            }
+        for (String s : v1) {
+            System.out.print(s);
+            System.out.print(" ");
         }
 
+        System.out.println();
 
+        int n = Math.max(v1.length, v2.length);
+
+        for (int i = 0; i < n; i++) {
+            int x = 0, y = 0;
+            if (i < v1.length) {
+                x = Integer.parseInt(v1[i]);
+            }
+            if (i < v2.length) {
+                y = Integer.parseInt(v2[i]);
+            }
+            if (x > y) {
+                return 1;
+            }
+            if (x < y) {
+                return -1;
+            }
+        }
         return 0;
     }
 
+    // 测试主函数
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-
-        String version1 = "1.2";
-        String version2 = "1.10";
-        System.out.println("结果=" + solution.compareVersion(version1, version2)); // 输出: -1
-
-
+        System.out.println(solution.compareVersion("1.0222221", "1.001")); // 0
     }
 }
